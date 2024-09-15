@@ -1,0 +1,17 @@
+﻿@typeparam T
+
+<select id="@Id" multiple>
+    @if (Options is not null)
+    {
+        @foreach (var option in Options)
+        {
+            <option
+                @key="@option.Key"
+                value="@option.Key.ToString()" 
+                selected="@(Value.Contains(option.Key))">
+                @option.Value
+            </option>
+        }
+    }
+</select>
+<p>Selected Options: @string.Join(',', Value)</p>

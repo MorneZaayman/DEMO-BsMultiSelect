@@ -1,0 +1,49 @@
+﻿@page "/"
+@using BsMultiSelect.Components.DualListBox
+
+<PageTitle>Home</PageTitle>
+
+<MgDualListBox
+    Id="Test"
+    Options="Options"
+    T="Int32"
+    @bind-Value="@Values"/>
+
+<hr />
+<button class="btn btn-primary" @onclick="(() => AddValue(2))">Add Two</button>
+<button class="btn btn-primary" @onclick="(() => AddValue(4))">Add Four</button>
+<hr />
+<button class="btn btn-primary" @onclick="(() => RemoveValue(2))">Remove Two</button>
+<button class="btn btn-primary" @onclick="(() => RemoveValue(4))">Remove Four</button>
+
+@code {
+    private Dictionary<int, string> Options = new Dictionary<int, string>()
+    {
+        { 1, "One" },
+        { 2, "Two" },
+        { 3, "Three" },
+        { 4, "Four" },
+        { 5, "Five" },
+    };
+
+    private List<int> Values = new List<int> { 1, 3, 5 };
+
+    private void AddValue(int value)
+    {
+        if (!Values.Contains(value))
+        {
+            Values.Add(value);
+        }
+        StateHasChanged();
+    }
+
+    private void RemoveValue(int value)
+    {
+        if (Values.Contains(value))
+        {
+            Values.Remove(value);
+        }
+        StateHasChanged();
+    }
+
+}

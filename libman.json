@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap@4.6.2",
+      "destination": "BsMultiSelect\\wwwroot\\lib\\bootstrap"
+    },
+    {
+      "library": "jquery@3.7.1",
+      "destination": "BsMultiSelect\\wwwroot\\lib\\jquery"
+    },
+    {
+      "library": "bootstrap4-duallistbox@4.0.2",
+      "destination": "BsMultiSelect\\wwwroot\\lib\\bootstrap4-duallistbox"
+    }
+  ]
+}
